@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/login/login.dart';
+
+import 'package:get/get.dart';
+import 'navigation/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,8 +35,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
         useMaterial3: true,
       ),
-      home: const MyHomePage(
-          title: 'My new page, so i will work on this page for now'),
+      initialRoute: Routes.Login,
+      getPages: [GetPage(name: Routes.Login, page: () => LoginView())],
     );
   }
 }
