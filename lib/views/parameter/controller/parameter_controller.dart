@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
+class ParameterController extends GetxController {
   var loading = false.obs;
 
   // Define your state variables
