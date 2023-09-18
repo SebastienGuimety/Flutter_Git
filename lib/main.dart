@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/views/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:flutter_application_1/views/login/login.dart';
-
-//import 'package:firebase_core/firebase_core.dart';
-//import 'firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 import 'package:get/get.dart';
 import 'navigation/routes.dart';
 
 void main() async {
-  /** 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  */
+
   runApp(const MyApp());
 }
 
