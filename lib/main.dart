@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/firebase_options.dart';
 import 'package:flutter_application_1/views/bottom_navigation_bar/bottom_navigation_bar.dart';
 import 'package:flutter_application_1/views/login/login.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-
 import 'package:get/get.dart';
 import 'navigation/routes.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   runApp(const MyApp());
 }
 
@@ -43,9 +42,16 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       darkTheme: ThemeData.dark().copyWith(primaryColor: Colors.red),
-      initialRoute: Routes.Home,
+      initialRoute: Routes.Login,
       getPages: [
-        GetPage(name: Routes.Home, page: () => BottomNavigationBarView())
+        GetPage(
+          name: Routes.Login,
+          page: () => LoginView(),
+        ),
+        GetPage(
+          name: Routes.Home,
+          page: () => BottomNavigationBarView(),
+        ),
       ],
     );
   }
